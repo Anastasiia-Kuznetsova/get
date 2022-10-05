@@ -23,7 +23,8 @@ GPIO.setup(comp, GPIO.IN)
 try:
     while True:
        a = (adc(comp, dac))
-       print("цифровое-", a, "напряжение", {":.3f"}.format(a * 3.3 / 2 ** 8))
+       print("цифровое-", a, "напряжение", end = " ")
+       print("{:.3f}".format(a * 3.3 / 2 ** 8))
 finally:
     GPIO.output(dac, 0)
     GPIO.output(troyka, 0)
